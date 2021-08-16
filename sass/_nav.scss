@@ -1,0 +1,127 @@
+@use './colors' as c;
+*{
+    text-decoration: none;
+}
+a{
+    font-size: 1.125em;
+    letter-spacing: .0625em;
+    font-weight: bold;
+    padding: .3125em;
+    color: c.$white;
+    border-radius: .625em;
+    &:hover{
+        opacity: .8;
+    }
+}
+nav{
+    background-color: c.$white;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    height: 5em;
+    background-color: rgba(255,255,255,.1);
+    backdrop-filter: blur(.3125em);
+    border-bottom: 1px solid c.$white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+   
+    
+
+    .bars{
+        background-color: c.$black;
+        border-radius: 50%;
+        position: relative;
+        cursor: pointer;
+        padding: 1.25em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: .4s ease;
+        display: none;
+        &::before{
+            content: '';
+            position:absolute;
+            width: .9375em;
+            height: .125em;
+            background-color: c.$white;
+            transition: .4s ease;
+            transform: translateY(-0.375em);
+            box-shadow: 0 .4375em 0 c.$white; 
+          
+        }
+        &::after{
+            content: '';
+            position:absolute;
+            width: .9375em;
+            height: .125em;
+            background-color: c.$white;
+            transition: .4s ease;
+            transform: translateY(8px);
+
+        }
+        @media (max-width:894px) {
+            display: flex;
+        }
+    }
+
+ .bar-x{
+        &::before{
+            transform: translateY(0)  rotate(45deg);
+            box-shadow: 0 0 0 c.$white;
+        }
+        &::after{
+            transform: translateY(0) rotate(-45deg);
+        }
+     
+    }
+
+
+    // logos 
+    .nav-logo{
+        color: c.$white;
+        padding: .625em;
+        border: .0625em solid c.$white;
+    }
+    
+    .nav-menu{
+        width: 50%;
+        align-items: center;
+        justify-content: space-around;
+        display: flex;
+         @media (max-width:894px) {
+            position: fixed;
+            flex-direction: column;
+            width: 100%;
+            gap: .625em;
+            left: -100%;
+            top: 5em;
+            height: 100vh;
+            background-color: rgb(37, 36, 34,.8);
+            backdrop-filter: blur(.3125em);
+            transition: .3s ease all;
+
+        }
+        .nav-menu-content:nth-child(1){
+            a{
+            background-color: c.$black;
+            }
+        }
+        .nav-menu-content:nth-child(2){
+            a{
+                background-color: c.$red-m
+            }
+        }
+        .nav-menu-content:nth-child(4){
+            a{
+                color: c.$black;
+                background-color: c.$yellow
+            }
+        }
+    }
+    .show-menu{
+        left: 0;
+    }
+
+}

@@ -1,0 +1,213 @@
+@use './colors' as c;
+@use './frames' as f;
+@use './normalize';
+@use './nav';
+@use './footer';
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: c.$black;
+    &::-webkit-scrollbar{
+        background-color: c.$white;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: c.$yellow;
+        border-radius: .125em;
+    }
+}
+// main-manu-and-more
+main{
+   width: 100%;
+// header-bg 
+header{
+    width: 100%;
+    height: 100vh;
+    background: url(../src/pizza-bg.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    &::after{
+        position:absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,.5);
+    }
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    
+    .header-publish{
+        z-index: 2;
+        .header-publish-content{
+        width:60vw ;
+        background-color:transparent;
+        color: c.$white;
+        display: flex;
+        gap: .3125em;
+        flex-direction: column;
+        h1{
+            @include f.titles(2.4375em,c.$white)
+        }
+        h4{
+            @include f.titles(1.5625em,c.$white)
+        }
+        .header-publish-button{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            button{
+                @include f.button(c.$yellow,c.$black,1.5625em)
+            }
+        }
+            
+        } 
+    }
+}
+   .main-menu{
+    width: 90%;
+    height: 100vh;
+    background-color: c.$white;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;   
+    @media (max-width:1123px) {
+        height: auto;
+        padding-bottom: 5vh;
+        padding-top: 5vh;
+        flex-direction: column;
+    }
+    .main-content{
+        position: relative;
+        display:inline-grid;
+        justify-items: center;
+        grid-template-columns: repeat(3,1fr);
+        padding: .9375em;
+        gap: .625em;
+        @media (max-width:1123px) {
+            grid-template-columns: repeat(2,1fr);
+            align-items: center;
+            justify-content: center;
+            gap: 3.125em;
+        }
+        @media (max-width:783px) {
+            grid-template-columns: repeat(1,1fr);
+        }
+    .main-content-text{
+        position: relative;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: .75em;
+        justify-content: center;
+        .btn-main-content{
+            @include f.button(c.$red,c.$white,1.125em)
+        }
+    }
+        .card{
+            @include f.card(c.$yellow,url(../src/img1.jpg),-100,'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sapiente iure autem culpa asperiores voluptates eligendi, atque tenetur libero ducimus totam et vel '); 
+        }
+        .card-2{
+            @include f.card(c.$red,url(../src/img2.jpg),0,'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sapiente iure autem culpa asperiores voluptates eligendi, atque tenetur libero ducimus totam et vel '); 
+        }
+    }
+    }
+}
+
+.article2{
+    width: 100%;
+    height: 100vh;
+    background: url(../src/bg-art.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    @media (max-width:929px) {
+        height: auto;
+        padding-top: 10vh;
+        padding-bottom: 10vh;
+    }
+    h2{
+        @include f.box-text(1.875em,c.$white)
+    } 
+    p{
+        @include f.box-text(1em,c.$white)
+    }   
+    .article-menu{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: .625em;
+        flex-wrap: wrap;
+        .article-menu-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 18.75em;
+            img{
+                width: 18.75em;
+                @media (max-width:300px) {
+                    width: 100%;
+                }
+            }
+            button{
+                    @include f.button(c.$black,c.$white,1.125em)
+            }
+            .article-menu-description{
+                text-align: center;
+                padding: .3125em;
+                color: c.$white;
+               
+            }
+       
+        }
+    }    
+ 
+   
+}
+
+
+
+
+
+@media (max-width:1200px) {
+    body{
+        font-size: 17px;
+    }
+}
+@media (max-width:800px) {
+    body{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:500px) {
+    body{
+        font-size: 15px;
+    }
+}
