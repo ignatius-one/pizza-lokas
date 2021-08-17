@@ -8,16 +8,22 @@ footer{
         display:flex;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
         gap: .75em;
+        @media (max-width: 1030px) {
+            flex-wrap: wrap;
+        }
         .footer-social-media{
-            width: 50%;
+            width: 20%;
             display: flex;
             flex-direction: column;
             gap: .3125em;
             i{font-size: 1.1875em;}
+            @media (max-width:677px) {
+                width: 50%;
+            }
         }
         .footer-map{
+            
             @media (max-width:400px) {
                 iframe{
                     width: 90%;

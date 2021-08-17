@@ -32,7 +32,7 @@ main{
 header{
     width: 100%;
     height: 100vh;
-    background: url(../src/pizza-bg.gif);
+    background: url(../src/bg-pizza.gif);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -112,7 +112,6 @@ header{
         }
     .main-content-text{
         position: relative;
-
         display: flex;
         flex-direction: column;
         align-items: center;

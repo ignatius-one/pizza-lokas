@@ -37,7 +37,6 @@ transition: .4s ease all;
         right: 0;
     }
     @media (max-width:406px) {
-        overflow: hidden;
         width: 90%;
         height: 21.875em;
         &::before{
