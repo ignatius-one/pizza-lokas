@@ -81,8 +81,14 @@ nav{
     // logos 
     .nav-logo{
         color: c.$white;
+        background-color: c.$yellow;
         padding: .625em;
-        border: .0625em solid c.$white;
+        &::first-letter{
+            color: c.$black;
+            font-size: 1.125em;
+        }
+        
+        // border: .0625em solid c.$white;
     }
     
     .nav-menu{

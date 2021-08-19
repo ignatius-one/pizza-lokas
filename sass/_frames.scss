@@ -9,7 +9,7 @@
     font-size: $size;
     color: $color;
 } 
-@mixin card($bgcolor,$bgimg,$top,$content) {
+@mixin card($bgimg,$bkbgcolor) {
     background: $bgimg;
     width: 18.75em;
     height: 25em;
@@ -21,29 +21,28 @@ transition: .4s ease all;
 &:hover{
         transform: scale(1.1);
     }
-&::before{
-        background-color: $bgcolor;
-        position: absolute;
-        content: $content;
-        width: 100%;
-        color: c.$white;
-        font-size: .9375em;
-        text-align: center;
-        padding: .625em;        
-        height: 20%;
-        bottom: $top;
-        font-weight: bold;
-        
-        right: 0;
-    }
+.card-back{
+            padding: .625em;
+            width: 105%;
+            height: 25%;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            gap: .3125em;
+            right: 0;
+            color: c.$white;
+            background-color: $bkbgcolor;
+} 
     @media (max-width:406px) {
         width: 90%;
         height: 21.875em;
-        &::before{
+        .card-back{
             height: 30%;
-            padding: .625em;        
+            padding: .625em;
         }
     }
+   
+    
 }
     
 @mixin button($bgcolor,$color,$size) {

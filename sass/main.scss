@@ -122,10 +122,25 @@ header{
         }
     }
         .card{
-            @include f.card(c.$yellow,url(../src/img1.jpg),-100,'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sapiente iure autem culpa asperiores voluptates eligendi, atque tenetur libero ducimus totam et vel '); 
+            @include f.card(url(../src/img1.jpg),c.$red); 
+            .card-back{
+                top: 0;
+                button{
+                @include f.button(c.$white,c.$black,1em);
+                width: 5em;
+            }
+        } 
+    }
+    .card-2{
+        @include f.card(url(../src/img2.jpg),c.$yellow); 
+        .card-back{
+            bottom: 0;
+            button{
+                @include f.button(c.$white,c.$black,1em);
+                align-self: flex-end;
+                width: 5em;
+            }
         }
-        .card-2{
-            @include f.card(c.$red,url(../src/img2.jpg),0,'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sapiente iure autem culpa asperiores voluptates eligendi, atque tenetur libero ducimus totam et vel '); 
         }
     }
     }
