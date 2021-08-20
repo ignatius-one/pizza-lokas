@@ -1,0 +1,71 @@
+@use './nav';
+@use './normalize';
+@use './footer';
+@use './colors' as c;
+@use './send';
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: c.$black;
+    &::-webkit-scrollbar{
+        background-color: c.$white;
+    }
+    &::-webkit-scrollbar-thumb{
+        background-color: c.$yellow;
+        border-radius: .125em;
+    }
+}
+main{
+    width: 90%;
+    margin-top: 5em;
+    color: c.$black-m;
+    background-color: c.$white;
+    margin-left: auto;
+    margin-right: auto;
+    .branch{
+        padding: .625em;
+        .branchs{
+            padding: 3.125em;
+             @media (max-width:548px) {
+                   padding: .625em;
+                }
+            .map{
+                margin-top: 1.25em;
+                display: inline-grid;
+                grid-template-columns:repeat(3,1fr);
+                gap: .625em;
+               
+                @media (max-width:1178px) {
+                    grid-template-columns: repeat(2,1fr);
+                    img{
+                        width: 100%;
+                    }
+                }
+                @media (max-width:766px) {
+                    grid-template-columns: repeat(1,1fr);
+                    iframe{
+                        width: 100%;
+                    }
+                    img{
+                        width: 100%;
+                    }
+                }
+                .cnt-map{
+                    display: flex;
+                    flex-direction: column;
+                    gap: .625em;
+                }
+            }
+        }
+    }
+
+}
