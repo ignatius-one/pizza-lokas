@@ -39,7 +39,7 @@ header{
         top: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(0,0,0,0.47);
+        background-color: rgba(0,0,0,0.5);
     }
     display: flex;
     align-items: center;
@@ -47,6 +47,9 @@ header{
     h1{
         color: c.$white;
         z-index: 3;
+        i{
+            padding: .75em;
+        }
     }
 }
 main{
@@ -58,8 +61,8 @@ main{
     margin-right: auto;
     border-top-right-radius: .75em;
     border-top-left-radius: .75em;
-    .branch{
-        
+   
+    .branch{  
         padding: .625em;
     }
    
@@ -145,7 +148,12 @@ main{
            .cnt-map{
                 display: flex;
                 gap: .625em;
-                flex-direction: column;   
+                flex-direction: column;  
+                h2{
+                    i{
+                        padding-left: .625em;
+                    }
+                } 
            }
         //    img{
         //        width: 100%;
