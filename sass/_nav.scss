@@ -129,5 +129,19 @@ nav{
     .show-menu{
         left: 0;
     }
-
 }
+
+// // hidden menu when you scroll down 
+// let position = window.pageYOffset;
+// // create var 
+// let nav = document.getElementById('nav');
+// window.addEventListener('scroll', function () {
+//     adress = this.window.pageYOffset
+//     if (position >= adress) {
+//         nav.style.top = '0'
+//     } else {
+//         nav.style.top = '-5em'
+//     }
+//     position = adress
+// })
+// // hidden menu when you scroll down 

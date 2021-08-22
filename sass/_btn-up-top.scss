@@ -1,0 +1,140 @@
+@use './colors' as c;
+
+
+// $white:#ffffff;
+// $blue:#0466c8;
+
+
+.btn-top-container{
+    position: fixed;
+    bottom: 3.5em;
+    right: .9375em;
+    width: 3.5em;
+    height: 3.5em;
+    z-index: -1;
+   
+    .btn-top-up{
+        width: 0;
+        height: 0;
+        background-color: c.$black;
+        border-radius: 10%;
+        border: 2px solid c.$white;
+        cursor: pointer;
+        top: 50%;
+        left: 50%;
+                         -webkit-transform: translate(-50% , -50%);
+                         -ms-transform: translate(-50% , -50%);
+        transform: translate(-50% , -50%);
+        z-index: -1;
+        transition: .6s ease all;
+        &:active{
+            background-color: c.$yellow;
+        }
+    }
+    i{
+        position: absolute;
+        top: 48%;
+        font-size: 1.7em;
+        left: 50%;
+                    -webkit-transform: translate(-50% , -50%) scale(0);
+                    -ms-transform: translate(-50% , -50%) scale(0);
+        transform: translate(-50% , -50%) scale(0);
+        color: c.$white;
+                    -webkit-transition: .2s;
+                    -o-transition: .2s;
+        transition: .2s;
+    }
+}
+.show-top{
+    z-index: 10;
+    .btn-top-up{
+                 -webkit-animation: popup .3s ease-in-out;
+    animation: popup .3s ease-in-out;
+    width: 3.7em;
+    height: 3.7em;
+    z-index: 2;
+}
+    i{
+                -webkit-transform: translate(-50%, -50%) scale(1);
+                -ms-transform: translate(-50%, -50%) scale(1);
+    transform: translate(-50%, -50%) scale(1);
+    }
+}
+                            @-webkit-keyframes popup {
+                                0%{
+                                    width: 0;
+                                    height: 0;
+                                }
+                                50%{
+                                    width: 4em;
+                                    height: 4em;
+                                }
+                                100%{
+                                    width: 3.5em;
+                                    height: 3.5em;
+                                }
+                                
+                            }
+@keyframes popup {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    50%{
+        width: 4em;
+        height: 4em;
+    }
+    100%{
+        width: 3.5em;
+        height: 3.5em;
+    }
+    
+}
+
+
+// js 
+
+// window.onscroll = function () {
+//     if (document.documentElement.scrollTop > 100) {
+//         document.querySelector('.btn-top-container')
+//             .classList.add('show-top')
+//     } else {
+//           document.querySelector('.btn-top-container')
+//             .classList.remove('show-top')
+//     }
+// }
+// document.querySelector('.btn-top-container').addEventListener('click', () => {
+//     window.scrollTo({
+//         top: 0,
+//         behavior:'smooth',
+//     })
+// })
+
+
+// by wassap media contact
+
+
+.container_contact_media{
+    position: fixed;
+    bottom: 28%;
+    right: .625em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+  
+   
+    img{
+        margin-top: .3125em;
+        width: 2.8125em;
+        transition: .3s ease all;
+         &:hover{
+        opacity: .8;
+        transform: scale(1.1);
+          }
+    }
+} 
+.show-icon-social{
+    z-index: 10;
+    background-color: red;
+}
