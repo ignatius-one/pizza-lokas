@@ -1,4 +1,6 @@
 @use './colors' as c;
+@use './comments';
+
 footer{
     width: 100%;
     background-color: c.$black;
@@ -43,3 +45,4 @@ footer{
         
     }
 }
+

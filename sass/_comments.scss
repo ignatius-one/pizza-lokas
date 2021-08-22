@@ -1,0 +1,6 @@
+@use './colors' as c;
+.fb-comments{
+    width: 100%;
+    background-color: c.$white;
+    color:c.$black;
+}

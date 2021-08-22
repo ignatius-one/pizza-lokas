@@ -1,7 +1,9 @@
 @use './colors' as c;
 @use './frames' as f;
 .contact{
-    width: 100%;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
     background-color: c.$white;
     height: 100vh;
     display: flex;
@@ -13,9 +15,11 @@ form{
     padding: .9375em;
     background-color: c.$black;
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
     gap: .625em;
-    color: c.$white;
+    color: c.$white-mi;
     border-radius: .75em;
     @media (max-width:700px) {
         width: 70%;
@@ -31,12 +35,16 @@ form{
     input{
         border: none;
         outline: none;
+        width: 70%;
+        border-radius: .3125em;
         padding: .3125em;
     }
     textarea{
+        width: 100%;
         padding: .3125em;
         outline: none;
         border: none;
+        // resize: none;
     }
     .content-button{
         display: flex;
